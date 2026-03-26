@@ -13,14 +13,6 @@ import {
 import {
   Star, Phone, MapPin, Clock
 } from "lucide-react";
-import dynamic from "next/dynamic";
-
-const TrustIndexWidget = dynamic(() => import("./TrustIndexWidget").then(m => m.TrustIndexWidget), {
-  ssr: false,
-  loading: () => <div className="min-h-[400px] animate-pulse bg-gray-50 rounded-3xl" />
-});
-
-
 const WA_LINK = "https://api.whatsapp.com/send?phone=556184427201&text=Ol%C3%A1!%20Estava%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o!";
 
 const WaIcon = () => (
@@ -91,7 +83,17 @@ export function ReviewsSection() {
           </div>
         </div>
         <div className="mt-12 min-h-[300px]">
-          <TrustIndexWidget />
+          {/* Official TrustIndex Placeholder - Hydration safe */}
+          <div 
+            className="ti-widget" 
+            data-layout-id="13" 
+            data-layout-category="slider"
+            data-pid="3905510683a81996f1961d16c12" 
+            data-trustindex-widget="true"
+            data-no-translation="true"
+            data-language="pt"
+            suppressHydrationWarning
+          />
         </div>
         <div className="text-center mt-12">
           <a 
