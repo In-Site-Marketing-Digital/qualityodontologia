@@ -63,11 +63,6 @@ export default function RootLayout({
     <html lang="pt-BR" className={lufga.variable}>
       <body className="font-sans antialiased">
         {children}
-        <script 
-          src="https://cdn.trustindex.io/loader.js?3905510683a81996f1961d16c12" 
-          defer
-          async
-        />
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -68,7 +69,21 @@ export function GallerySection() {
   );
 }
 
-export function ReviewsSection() {
+export const ReviewsSection = () => {
+  useEffect(() => {
+    // Inject TrustIndex loader script manually on mount
+    const script = document.createElement("script");
+    script.src = "https://cdn.trustindex.io/loader.js?3905510683a81996f1961d16c12";
+    script.defer = true;
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up on unmount to prevent duplicates
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <section className="py-24 bg-gray-50" id="avaliacoes">
       <div className="max-w-7xl mx-auto px-6">
