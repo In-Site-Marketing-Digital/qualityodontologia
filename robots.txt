@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://qualityodontologia.com.br/sitemap.xml
