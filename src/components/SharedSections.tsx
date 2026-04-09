@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -70,45 +70,12 @@ export function GallerySection() {
 }
 
 export const ReviewsSection = () => {
-  useEffect(() => {
-    // Inject TrustIndex loader script manually on mount
-    const script = document.createElement("script");
-    script.src = "https://cdn.trustindex.io/loader.js?3905510683a81996f1961d16c12";
-    script.defer = true;
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Clean up on unmount to prevent duplicates
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <section className="py-24 bg-gray-50" id="avaliacoes">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-4">
           <Badge className="bg-[#eaf6ea] text-[#5aab58] border-0 text-xs font-bold tracking-widest uppercase mb-4 px-4 py-1.5 rounded-full">Avaliações</Badge>
           <h2 className="text-4xl font-black mb-3">O que nossos <span className="text-[#90cf8e]">pacientes</span> dizem</h2>
-          <div className="flex items-center justify-center gap-2 mt-2">
-            <div className="flex">
-              {Array(5).fill(0).map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-            </div>
-            <span className="font-bold text-sm text-gray-700">4.9 / 5 no Google</span>
-          </div>
-        </div>
-        <div className="mt-12 min-h-[300px]">
-          {/* Official TrustIndex Placeholder - Hydration safe */}
-          <div 
-            className="ti-widget" 
-            data-layout-id="13" 
-            data-layout-category="slider"
-            data-pid="3905510683a81996f1961d16c12" 
-            data-trustindex-widget="true"
-            data-no-translation="true"
-            data-language="pt"
-            suppressHydrationWarning
-          />
         </div>
         <div className="text-center mt-12">
           <a 
@@ -204,5 +171,55 @@ export function FooterSection() {
         </div>
       </div>
     </footer>
+  );
+}
+
+export function TeamSection() {
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <Badge className="bg-[#eaf6ea] text-[#5aab58] border-0 text-xs font-bold tracking-widest uppercase mb-4 px-4 py-1.5 rounded-full">Nosso Time</Badge>
+          <h2 className="text-4xl md:text-5xl font-black mb-6">Nossos <span className="text-[#90cf8e]">Especialistas</span></h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">Equipe dedicada a transformar seu sorriso com ética e as melhores técnicas da odontologia moderna.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            { 
+              nome: "Dr. Guilherme Souza", 
+              cro: "CRO 13.565", 
+              img: "/doutores/Dr. Guilherme Souza - CRO 13.565.jpg" 
+            },
+            { 
+              nome: "Dr. Hebert Castro", 
+              cro: "CRO DF 9966", 
+              img: "/doutores/Dr. Hebert Castro - CRO DF 9966.png" 
+            },
+            { 
+              nome: "Dra. Patrícia Almeia", 
+              cro: "CRO DF 5006", 
+              img: "/doutores/Dra Patrícia Almeia - CRO DF 5006.png" 
+            }
+          ].map((doc, i) => (
+            <div key={i} className="hover:-translate-y-2 transition-transform duration-500">
+              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl mb-6">
+                <Image 
+                  src={doc.img} 
+                  alt={doc.nome} 
+                  fill 
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white text-left">
+                  <h3 className="text-xl font-black leading-tight">{doc.nome}</h3>
+                  <p className="text-[#90cf8e] text-xs font-bold mt-1 uppercase tracking-widest">{doc.cro}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

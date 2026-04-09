@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { GallerySection, ReviewsSection, FaqSection, FooterSection } from "@/components/SharedSections";
+import { GallerySection, ReviewsSection, FaqSection, FooterSection, TeamSection } from "@/components/SharedSections";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -30,15 +30,15 @@ const WaIcon = () => (
 const WA_LINK = "https://api.whatsapp.com/send?phone=556184427201&text=Ol%C3%A1!%20Estava%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o!";
 
 const treatments = [
-  { slug: "ortodontia", name: "Ortodontia", desc: "Corrija o alinhamento dos seus dentes com Invisalign, aparelhos estéticos e autoligáveis.", icon: <svg viewBox="0 0 24 24" className="w-7 h-7 fill-[#90cf8e]" aria-hidden><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14H9v-4H7v-2h2V8h2v2h2v2h-2v4zm4 0h-2v-6h2v6z"/></svg>, img: "/ortodontia.png" },
-  { slug: "implantes", name: "Implantes Dentários", desc: "Recupere mastigação e estética com implantes titanium de alta durabilidade.", icon: <Bone className="w-7 h-7 text-[#90cf8e]" />, img: "/implantes.png" },
-  { slug: "estetica", name: "Dentística & Estética", desc: "Facetas, lentes de contato, clareamento e restaurações estéticas.", icon: <Sparkles className="w-7 h-7 text-[#90cf8e]" />, img: "/estetica.png" },
-  { slug: "odontopediatria", name: "Odontopediatria", desc: "Cuidado lúdico e acolhedor para a saúde bucal das crianças desde o primeiro dente.", icon: <Baby className="w-7 h-7 text-[#90cf8e]" />, img: "/odontopediatria.png" },
-  { slug: "endodontia", name: "Endodontia (Canal)", desc: "Canal com microscópio operatório. Máxima precisão e mínimo desconforto.", icon: <Microscope className="w-7 h-7 text-[#90cf8e]" />, img: "/endodontia.png" },
-  { slug: "protese", name: "Prótese Protocolo", desc: "Reabilitação total fixa sobre implantes. Sorria novamente sem remover a prótese.", icon: <Gem className="w-7 h-7 text-[#90cf8e]" />, img: "/protese.jpg" },
-  { slug: "apneia", name: "Apneia do Sono", desc: "Aparelhos intraorais confortáveis que eliminam o ronco e melhoram seu sono.", icon: <Moon className="w-7 h-7 text-[#90cf8e]" />, img: "/apneia.jpg" },
-  { slug: "atm", name: "Disfunção da ATM", desc: "Tratamento especializado para dores de cabeça, trava e bruxismo.", icon: <ScanFace className="w-7 h-7 text-[#90cf8e]" />, img: "/atm.jpg" },
-  { slug: "cirurgia", name: "Cirurgia Odontológica", desc: "Extração de sisos, frenectomias e procedimentos pré-implante com segurança.", icon: <Scissors className="w-7 h-7 text-[#90cf8e]" />, img: "/cirurgia.jpg" },
+  { slug: "ortodontia", name: "Ortodontia", desc: "Corrija o alinhamento dos seus dentes com Invisalign, aparelhos estéticos e autoligáveis.", icon: <svg viewBox="0 0 24 24" className="w-7 h-7 fill-[#90cf8e]" aria-hidden><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14H9v-4H7v-2h2V8h2v2h2v2h-2v4zm4 0h-2v-6h2v6z"/></svg>, img: "/ortodontia_new.png" },
+  { slug: "implantes", name: "Implantes Dentários", desc: "Recupere mastigação e estética com implantes titanium de alta durabilidade.", icon: <Bone className="w-7 h-7 text-[#90cf8e]" />, img: "/implantes_new.png" },
+  { slug: "estetica", name: "Dentística & Estética", desc: "Facetas, lentes de contato, clareamento e restaurações estéticas.", icon: <Sparkles className="w-7 h-7 text-[#90cf8e]" />, img: "/estetica_new.png" },
+  { slug: "odontopediatria", name: "Odontopediatria", desc: "Cuidado lúdico e acolhedor para a saúde bucal das crianças desde o primeiro dente.", icon: <Baby className="w-7 h-7 text-[#90cf8e]" />, img: "/odontopediatria_new.png" },
+  { slug: "endodontia", name: "Endodontia (Canal)", desc: "Canal com microscópio operatório. Máxima precisão e mínimo desconforto.", icon: <Microscope className="w-7 h-7 text-[#90cf8e]" />, img: "/endodontia_new.png" },
+  { slug: "protese", name: "Prótese Protocolo", desc: "Reabilitação total fixa sobre implantes. Sorria novamente sem remover a prótese.", icon: <Gem className="w-7 h-7 text-[#90cf8e]" />, img: "/protese_new.png" },
+  { slug: "apneia", name: "Apneia do Sono", desc: "Aparelhos intraorais confortáveis que eliminam o ronco e melhoram seu sono.", icon: <Moon className="w-7 h-7 text-[#90cf8e]" />, img: "/apneia_new.png" },
+  { slug: "atm", name: "Disfunção da ATM", desc: "Tratamento especializado para dores de cabeça, trava e bruxismo.", icon: <ScanFace className="w-7 h-7 text-[#90cf8e]" />, img: "/atm_new.png" },
+  { slug: "cirurgia", name: "Cirurgia Odontológica", desc: "Extração de sisos, frenectomias e procedimentos pré-implante com segurança.", icon: <Scissors className="w-7 h-7 text-[#90cf8e]" />, img: "/cirurgia_new.png" },
 ];
 
 const reviews = [
@@ -271,6 +271,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <TeamSection />
 
       {/* ── CTA STRIP ────────────────────────────────────── */}
       <section className="bg-[#90cf8e] py-16 relative overflow-hidden">

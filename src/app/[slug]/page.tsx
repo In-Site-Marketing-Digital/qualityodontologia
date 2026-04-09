@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
-import { GallerySection, ReviewsSection, FaqSection, FooterSection } from "@/components/SharedSections";
+import { GallerySection, ReviewsSection, FaqSection, FooterSection, TeamSection } from "@/components/SharedSections";
 
 const WA_LINK = "https://api.whatsapp.com/send?phone=556184427201&text=Ol%C3%A1!%20Estava%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o!";
 
@@ -20,7 +20,7 @@ const treatmentsData = {
       title: "Ortodontia",
       subtitle: "Alinhamento e harmonia para o seu sorriso.",
       desc: "Tratamentos modernos e discretos, como o Invisalign e aparelhos autoligáveis, para garantir um sorriso perfeito e alinhado com o máximo de conforto.",
-      image: "/ortodontia.png"
+      image: "/ortodontia_new.png"
     },
     whatIs: "A ortodontia é a especialidade odontológica responsável por corrigir a posição dos dentes e dos ossos maxilares posicionados de forma inadequada. Dentes tortos ou que não se encaixam corretamente são difíceis de serem mantidos limpos, o que pode causar perda precoce.",
     why: [
@@ -42,7 +42,7 @@ const treatmentsData = {
       title: "Implantes Dentários",
       subtitle: "Recupere a segurança de mastigar e sorrir.",
       desc: "Soluções definitivas e estéticas para a reposição de dentes perdidos, utilizando tecnologia de ponta para cirurgias guiadas e indolores.",
-      image: "/implantes.png"
+      image: "/implantes_new.png"
     },
     whatIs: "Os implantes dentários são suportes ou estruturas de metal (normalmente de titânio) posicionadas cirurgicamente no osso maxilar abaixo da gengiva para substituir as raízes dentárias, permitindo fixar dentes substitutos sobre eles.",
     why: [
@@ -64,7 +64,7 @@ const treatmentsData = {
       title: "Dentística e Estética",
       subtitle: "A arte de transformar sorrisos.",
       desc: "Facetas em resina ou porcelana, lentes de contato dental e clareamento para um sorriso branco, brilhante e perfeitamente desenhado.",
-      image: "/estetica.png"
+      image: "/estetica_new.png"
     },
     whatIs: "A dentística estética atua tanto na cosmética quanto na restauração dental. O objetivo principal é manter toda a integridade estrutural e funcional do dente, somado à valorização da beleza do sorriso através da harmonia de forma, textura e cor.",
     why: [
@@ -86,7 +86,7 @@ const treatmentsData = {
       title: "Odontopediatria",
       subtitle: "Cuidado lúdico desde o primeiro dentinho.",
       desc: "Um ambiente acolhedor e técnicas de condicionamento para que seu filho cresça sem traumas e com a saúde bucal em dia.",
-      image: "/odontopediatria.png"
+      image: "/odontopediatria_new.png"
     },
     whatIs: "A odontopediatria é a área direcionada a bebês, crianças e adolescentes. O foco não está apenas em tratar cáries, mas em guiar o desenvolvimento através de prevenção, ensinando bons hábitos e criando uma relação amigável com a cadeira do dentista.",
     why: [
@@ -108,7 +108,7 @@ const treatmentsData = {
       title: "Endodontia",
       subtitle: "Tratamento de canal indolor e de alta precisão.",
       desc: "Utilizamos microscopia operatória e instrumentos mecanizados para realizar tratamentos de canal em sessão única, com total conforto.",
-      image: "/endodontia.png"
+      image: "/endodontia_new.png"
     },
     whatIs: "Popularmente conhecido como tratamento de canal, a endodontia é a área da odontologia responsável por tratar as doenças da polpa dentária (o nervo do dente). Com o avanço da tecnologia, o processo se tornou rápido, eficiente e completamente isento de dor.",
     why: [
@@ -130,7 +130,7 @@ const treatmentsData = {
       title: "Prótese Protocolo",
       subtitle: "Sua dentadura fixa e segura.",
       desc: "A solução definitiva para quem usa dentadura e deseja dentes fixos, estética natural e o prazer de comer sem insegurança.",
-      image: "/protese.jpg"
+      image: "/protese_new.png"
     },
     whatIs: "A Prótese Protocolo é uma solução de reabilitação total fixa sobre implantes. Diferente da dentadura comum, ela não possui o 'céu da boca' e é fixada por parafusos sobre 4 ou mais implantes, garantindo estabilidade total.",
     why: [
@@ -152,7 +152,7 @@ const treatmentsData = {
       title: "Apneia do Sono",
       subtitle: "Durma melhor, viva mais.",
       desc: "Tratamento do ronco e apneia leve com aparelhos intraorais modernos, garantindo noites de sono reparador e mais energia no dia a dia.",
-      image: "/apneia.jpg"
+      image: "/apneia_new.png"
     },
     whatIs: "O tratamento da apneia e ronco com aparelhos intraorais consiste no uso de um dispositivo personalizado que posiciona a mandíbula levemente para frente, mantendo as vias aéreas abertas durante o sono.",
     why: [
@@ -174,7 +174,7 @@ const treatmentsData = {
       title: "Disfunção da ATM",
       subtitle: "Alívio para dores e tensões faciais.",
       desc: "Diagnóstico e tratamento de dores na face, estalos ao abrir a boca e bruxismo, devolvendo o bem-estar e a qualidade de vida.",
-      image: "/atm.jpg"
+      image: "/atm_new.png"
     },
     whatIs: "A Disfunção Temporomandibular (DTM) afeta a articulação que liga a mandíbula ao crânio. O tratamento visa aliviar dores de cabeça, tensões musculares e proteger os dentes contra o bruxismo.",
     why: [
@@ -196,7 +196,7 @@ const treatmentsData = {
       title: "Cirurgia Odontológica",
       subtitle: "Procedimentos seguros e minimamente invasivos.",
       desc: "Extrações de sisos, cirurgias pré-protéticas e pequenos procedimentos realizados com técnicas avançadas para um pós-operatório rápido.",
-      image: "/cirurgia.jpg"
+      image: "/cirurgia_new.png"
     },
     whatIs: "As cirurgias odontológicas envolvem procedimentos como a remoção de dentes inclusos (sisos), frenectomias e cirurgias de tecidos moles ou ósseos necessárias para a saúde bucal ou preparação para próteses.",
     why: [
@@ -376,6 +376,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
+      <TeamSection />
       <GallerySection />
       <ReviewsSection />
       <FaqSection />

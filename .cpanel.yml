@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/quali1348832/public_html
+    - /bin/rsync -avz --delete out/ $DEPLOYPATH
