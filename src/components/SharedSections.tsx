@@ -184,7 +184,7 @@ export function TeamSection() {
           <p className="text-gray-500 max-w-2xl mx-auto">Equipe dedicada a transformar seu sorriso com ética e as melhores técnicas da odontologia moderna.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {[
             { 
               nome: "Dr. Guilherme Souza", 
@@ -200,6 +200,11 @@ export function TeamSection() {
               nome: "Dra. Patrícia Almeia", 
               cro: "CRO DF 5006", 
               img: "/doutores/Dra Patrícia Almeia - CRO DF 5006.png" 
+            },
+            { 
+              nome: "Dra. Andréa Lobato", 
+              cro: "CRO DF 4033", 
+              img: "/doutores/Dr. Andréa Lobato - CRO DF 4033.jpg" 
             }
           ].map((doc, i) => (
             <div key={i} className="hover:-translate-y-2 transition-transform duration-500">
